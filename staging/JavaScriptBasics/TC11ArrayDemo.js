@@ -42,5 +42,24 @@ for (let bro of browserlist) {
 }
 for (let number in arrayDemo){
     console.log(number) // output will be index of the arraydemo
+
+}
+
+//array for key value pair
+let employeeDetails = {
+    name: "John Doe",
+    age: 30,
+    department: "IT",
+    salary: 50000
+ 
+}
+console.log(employeeDetails.name);
+console.log(employeeDetails.age);
+employeeDetails.empcode = "E234"
+console.log (employeeDetails)
+delete employeeDetails.salary
+console.log(employeeDetails)
+
+for (let demo in employeeDetails){
     
 }
