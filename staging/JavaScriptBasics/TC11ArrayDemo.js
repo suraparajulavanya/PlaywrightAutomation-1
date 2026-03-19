@@ -34,6 +34,13 @@ browserlist.forEach(function(bro){
     console.log(bro)
 })
 
-browserlist.forEach((bro) => {
-    console.log(bro)
+browserlist.forEach((browser) => {
+    console.log(browser)
 })
+for (let bro of browserlist) {
+    console.log (bro)
+}
+for (let number in arrayDemo){
+    console.log(number) // output will be index of the arraydemo
+    
+}
