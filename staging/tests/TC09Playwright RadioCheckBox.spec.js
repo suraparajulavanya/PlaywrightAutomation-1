@@ -2,29 +2,32 @@
 
 import { test, expect } from '@playwright/test';
 
-test('Playwright locators demo', async ({ page }) => {
+test.setTimeout(120000);
 
-    await page.goto('https://ecommerce-playground.lambdatest.io/index.php?route=checkout/checkout');
-    // Select the "Guest Checkout" radio button
+test('Playwright locators demo', async ({ page }) => {
+    await page.goto('https://testautomationpractice.blogspot.com/');
+    await page.waitForLoadState('networkidle');
+    
+    // Select radio button by value
+    await page.check('input[value="female"]');
+    await expect(page.locator('input[value="female"]')).toBeChecked();
 });
 
 test('Playwright locators - Radio Button and CheckBox', async ({ page }) => {
-    await page.goto('https://ecommerce-playground.lambdatest.io/index.php?route=checkout/checkout');
+    await page.goto('https://testautomationpractice.blogspot.com/');
+    await page.waitForLoadState('networkidle');
 
-    // Select the "Guest Checkout" radio button
-    const guestCheckoutRadio = page.locator('input[type="radio"][value="guest"]');
-    await guestCheckoutRadio.check();
-    await expect(guestCheckoutRadio).toBeChecked();
-    // Select the "I have read and agree to the Terms & Conditions" checkbox
-    const termsCheckbox = page.locator('input[type="checkbox"][name="agree"]');
-
-    await termsCheckbox.check();
-
-
-    await expect(termsCheckbox).toBeChecked();
-    // Uncheck the checkbox
-    await termsCheckbox.uncheck();
-    await expect(termsCheckbox).not.toBeChecked();
+    // Select radio button
+    await page.check('input[id="male"]');
+    await expect(page.locator('input[id="male"]')).toBeChecked();
+    
+    // Select checkboxes
+    await page.check('input[id="sunday"]');
+    await expect(page.locator('input[id="sunday"]')).toBeChecked();
+    
+    // Uncheck checkbox
+    await page.uncheck('input[id="sunday"]');
+    await expect(page.locator('input[id="sunday"]')).not.toBeChecked();
 });
 
 
