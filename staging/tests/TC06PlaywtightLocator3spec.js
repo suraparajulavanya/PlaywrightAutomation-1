@@ -1,4 +1,4 @@
-
+// CSS Locators using nth-chaild
 
 import { test, expect } from '@playwright/test';
 
@@ -15,4 +15,11 @@ test('Playwright Locators  - CSS -3', async ({ page }) => {
     await page.getByRole('button', { name: 'Login' }).click();
     //using Nth - chaild
 
+    await page.locator('.oxd-main-menu').nth(0).click();
     await page.locator('.oxd-main-menu').nth(1).click();
+    await page.locator('.oxd-main-menu').nth(2).click();
+    await page.locator('.oxd-main-menu').nth(3).click();
+    await page.locator('.oxd-main-menu').nth(4).click();
+    await page.locator('.oxd-main-menu').nth(5).click();
+
+

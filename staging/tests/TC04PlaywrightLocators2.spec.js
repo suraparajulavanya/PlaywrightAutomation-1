@@ -5,14 +5,14 @@ import { test, expect } from '@playwright/test';
 
 test('Playwright locators - CSS', async ({ page }) => {
 
-    await page .goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
+    await page.goto('https://practicetestautomation.com/practice-test-login/');
 
-    // login
-    await page.getByPlaceholder('Username').fill('Admin');
-    await page.getByPlaceholder('Password').fill('admin123');
-    await page.getByRole('button', { name: 'Login' }).click();
+    // 3. Using ID
+    // Syntax = id value
+    // Syntax - input #idvalue
 
-    //1. Using Tag and Attribute and value
-    await page.locator('a[href="/web/index.php/admin/viewAdminModule"]').click();
+    await page.locator("#username").fill("student");
+    await page.locator("#password").fill("Password123");
+    await page.locator('button[type="submit"]').click(submit);
 
-
+});
